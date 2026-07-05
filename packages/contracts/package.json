@@ -1,1 +1,47 @@
-{"name":"@repute-x/contracts","version":"1.0.0","description":"Smart Contracts for ReputeX Token Launchpad","private":true,"scripts":{"compile":"hardhat compile","test":"hardhat test","coverage":"hardhat coverage","deploy:testnet":"hardhat run scripts/deploy.ts --network iopn-testnet","deploy:mainnet":"hardhat run scripts/deploy.ts --network iopn-mainnet","verify":"hardhat verify","lint":"solhint 'contracts/**/*.sol'"},"devDependencies":{"@nomicfoundation/hardhat-toolbox":"^4.0.0","@openzeppelin/hardhat-upgrades":"^2.0.0","@typechain/ethers-v6":"^11.1.0","@typechain/hardhat":"^9.0.0","@types/chai":"^4.3.0","@types/mocha":"^10.0.0","@types/node":"^20.0.0","hardhat":"^2.17.0","solhint":"^4.0.0","solidity-coverage":"^0.8.0","ts-node":"^10.9.0","typechain":"^8.3.0","typescript":"^5.0.0"},"dependencies":{"@openzeppelin/contracts":"^5.0.0","dotenv":"^16.3.1"}}
+{
+  "name": "@reputex/contracts",
+  "version": "1.0.0",
+  "description": "Smart contracts for ReputeX Token Launchpad",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "private": true,
+  "scripts": {
+    "compile": "hardhat compile",
+    "deploy:testnet": "hardhat run scripts/deploy.ts --network iopn-testnet",
+    "deploy:mainnet": "hardhat run scripts/deploy.ts --network iopn-mainnet",
+    "test": "hardhat test",
+    "test:coverage": "hardhat coverage",
+    "typechain": "typechain --target ethers-v6 --out-dir typechain-types './artifacts/contracts/**/*.json'",
+    "verify": "hardhat verify",
+    "lint": "solhint 'contracts/**/*.sol'",
+    "format": "prettier --write 'contracts/**/*.sol'",
+    "clean": "hardhat clean",
+    "build": "npm run compile && npm run typechain"
+  },
+  "keywords": [
+    "ethereum",
+    "solidity",
+    "smart-contracts",
+    "token-launchpad",
+    "bonding-curve",
+    "amm"
+  ],
+  "author": "ReputeX Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@openzeppelin/hardhat-upgrades": "^2.0.0",
+    "@typechain/hardhat": "^9.0.0",
+    "@types/node": "^20.0.0",
+    "hardhat": "^2.22.0",
+    "hardhat-contract-sizer": "^2.10.0",
+    "solhint": "^4.0.0",
+    "solidity-coverage": "^0.8.0",
+    "typechain": "^8.3.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0",
+    "@openzeppelin/contracts-upgradeable": "^5.0.0",
+    "dotenv": "^16.3.1"
+  }
+}
